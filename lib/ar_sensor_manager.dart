@@ -59,17 +59,16 @@ class ArSensorManager {
       }
     });
 
-    _positionSubscription =
-        Geolocator.getPositionStream().listen((Position position) {
-      _position = position;
-      _calculateSensor();
-    });
-
     _orientationStream =
         _deviceOrientationCommunicator.onOrientationChanged(useSensor: true);
     _orientationStreamSubscription = _orientationStream?.listen((event) {
       _orientation = event;
     });
+  }
+
+  void setPosition(Position position) {
+    _position = position;
+    _calculateSensor();
   }
 
   void _calculateSensor() {
