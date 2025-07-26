@@ -28,6 +28,7 @@ apply from: "$flutterRoot/packages/flutter_tools/gradle/flutter.gradle"
 android {
     compileSdkVersion 34
     ndkVersion flutter.ndkVersion
+    namespace "com.pie.technology.ar.location.view.ar_location_view"
 
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
